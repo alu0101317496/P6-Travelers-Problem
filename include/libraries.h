@@ -12,6 +12,7 @@
 #include <chrono>
 #include <cstdlib>
 #include <thread>
+#include <iomanip>
 
 #define global_variable static
 #define Clocker(a, b) ((double)(b-a)/CLOCKS_PER_SEC)
@@ -31,9 +32,20 @@ typedef struct internal_pair {
     int cost = 0;
 }Pair;
 
+typedef struct internal_Pair_solutions {
+    int cost = 0;
+    double time = 0;
+}Pairsolve;
+
 typedef struct internal_edges{
     std::string city1;
     std::string city2;
     int cost;
     
 }Edge;
+
+typedef struct internal_triplepair {
+    Pairsolve brute_force;
+    Pairsolve greedy;
+    Pairsolve dynamic;
+}Triple;
